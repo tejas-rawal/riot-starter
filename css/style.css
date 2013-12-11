@@ -1,0 +1,13 @@
+.box {
+  cursor: pointer;
+  float: left;
+  opacity: 0.5;
+  width: 50px; height: 50px;
+}
+.box:active {
+  opacity: 1;
+}
+
+.box.red   { background-color: #f00; }
+.box.green { background-color: #0f0; }
+.box.blue  { background-color: #00f; }

@@ -5,13 +5,27 @@
 </head>
 <body>
 
-<!-- HTML -->
+<form id="new-box">
+  <label>Color:</label>
+  <select class="color">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+  <input type="submit" value="Generate Box!" />
+</form>
+
+<div id="boxes">
+  <div class="box red"></div>
+  <div class="box green"></div>
+</div>
 
 <div id="templates">
-  <!-- TEMPLATES -->
+  <!-- TODO: (1) Create box template -->
 </div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
+<script src="vendor/js/jquery-ui.js"></script>
 <script src="vendor/js/riot.js"></script>
 <script src="js/main.js"></script>
 
