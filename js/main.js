@@ -12,7 +12,9 @@ $('#new-box').on('submit', function (e) {
   console.log('Creating a', color, 'box...');
 
   // TODO: (Step 4) Use boxTemplate, color, and $.render to generate new html
-  var newBoxHtml = $.render(boxTemplate, { color: 'blue' });
+  
+  var color = $('.color').val();
+  var newBoxHtml = $.render(boxTemplate, { color: color });
 
   console.log('Generated new box html:', newBoxHtml);
 
