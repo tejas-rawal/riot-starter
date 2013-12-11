@@ -13,4 +13,7 @@ var items = [
 ];
 
 for(var i = 0; i < items.length; i ++) {
+  var item = items[i];
+  var newItem = $.render(itemTemplate, item );
+  $('#store').append(newItem);
 }
