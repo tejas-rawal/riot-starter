@@ -16,7 +16,7 @@
   // 1. Event handler for adding todos
 
 
-  // 3.
+  // 3. Event handler for removing todos
   $root.on('click', '.destroy', function (e) {
     // TODO
 
@@ -26,7 +26,7 @@
 
   /* Listen to model events */
 
-  // 2.
+  // 2. Event listener for adding todos
   todo.on('add', function (newTodo) {
 
   });
