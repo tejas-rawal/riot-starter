@@ -5,7 +5,7 @@
 
   window.todo = new Todo();
 
-  // HTML for a single todo item
+  // HTML template for a single todo item
   var template = $("#templates .todo-item").html()
     , $root = $("#todo-list")
   ;
