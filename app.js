@@ -13,7 +13,7 @@
 
   /* Listen to user events */
 
-  // 1.
+  // 1. Event handler for adding todos
 
 
   // 3.
@@ -31,7 +31,7 @@
 
   });
 
-  // 4.
+  // 4. Event listener for deleting todos 
 
 
 })();
