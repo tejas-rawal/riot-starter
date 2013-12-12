@@ -11,39 +11,42 @@
   window.todo = new Todo();
 
   // HTML for a single todo item
-  var template = $("[type='html/todo']").html(),
-    root = $("#todo-list"),
-    nav = $("#filters a");
-
+  var template = $("#templates .todo-item").html()
+    , $root = $("#todo-list")
+  ;
 
 
   /* Listen to user events */
 
-  $("#submit").click(function(e) {
+  // 1.
+  // $("#submit").on('click', function(e) {
+  //   // TODO
+  //   var newTodoText = $('#new-todo').val();
+  //   console.log('Adding', newTodoText);
+  //   todo.add(newTodoText);
+  // });
+
+  // 3.
+  $root.on('click', '.destroy', function (e) {
     // TODO
-    }
-  })
+    // var id = $(this).closest('.todo-item').data('id');
+    // todo.remove(id);
+  });
+
 
 
   /* Listen to model events */
 
-  // TODO
+  // 2.
+  todo.on('add', function (newTodo) {
+    // var newTodoHtml = $.render(template, newTodo);
+    // $(newTodoHtml).appendTo($root);
+  });
 
+  // 4.
+  // todo.on('remove', function (newTodo) {
+  //   var dataFilter = '[data-id=' + newTodo.id + ']';
+  //   $('.todo-item', $root).filter(dataFilter).remove();
+  // });
 
-  /* Private functions */
-
-
-  var add = function (item) {
-    if (this.id) item = this;
-
-    var el = $($.render(template, item)).appendTo(root),
-
-
-    // remove
-    $(".destroy", el).click(function() {
-      todo.remove(item.id);
-    })
-  }
-
-
-})()
+})();

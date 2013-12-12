@@ -21,16 +21,17 @@ button {
 }
 
 #submit {
-	position: absolute;
-	top: -42px;
-	left: -4px;
-	width: 60px;
-	text-align: center;
 	border-style: solid;
 	border-width: 1px;
-	font-family: inherit;
-	background: #03b343;
+	cursor: pointer;
 	font-weight: bold;
+	font-family: inherit;
+	height: 66px;
+	padding: 0 16px;
+	position: absolute; top: 15px; right: 0;
+	text-align: center;
+	background: #FDFDFD;
+	z-index: 10;
 }
 
 body {
@@ -122,8 +123,7 @@ body {
 	border-top-right-radius: 1px;
 }
 
-#new-todo,
-.edit {
+#new-todo {
 	position: relative;
 	margin: 0;
 	width: 100%;
@@ -164,26 +164,6 @@ body {
 
 label[for='toggle-all'] {
 	display: none;
-}
-
-#toggle-all {
-	position: absolute;
-	top: -42px;
-	left: -4px;
-	width: 40px;
-	text-align: center;
-	border: none; /* Mobile Safari */
-}
-
-#toggle-all:before {
-	content: '»';
-	font-size: 28px;
-	color: #d9d9d9;
-	padding: 0 25px 7px;
-}
-
-#toggle-all:checked:before {
-	color: #737373;
 }
 
 #todo-list {
@@ -344,29 +324,6 @@ label[for='toggle-all'] {
 	text-align: left;
 }
 
-#filters {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	position: absolute;
-	right: 0;
-	left: 0;
-}
-
-#filters li {
-	display: inline;
-}
-
-#filters li a {
-	color: #83756f;
-	margin: 2px;
-	text-decoration: none;
-}
-
-#filters li a.selected {
-	font-weight: bold;
-}
-
 #clear-completed {
 	float: right;
 	position: relative;
@@ -431,138 +388,4 @@ hr {
 	border: 0;
 	border-top: 1px dashed #C5C5C5;
 	border-bottom: 1px dashed #F7F7F7;
-}
-
-.learn a {
-	font-weight: normal;
-	text-decoration: none;
-	color: #b83f45;
-}
-
-.learn a:hover {
-	text-decoration: underline;
-	color: #787e7e;
-}
-
-.learn h3,
-.learn h4,
-.learn h5 {
-	margin: 10px 0;
-	font-weight: 500;
-	line-height: 1.2;
-	color: #000;
-}
-
-.learn h3 {
-	font-size: 24px;
-}
-
-.learn h4 {
-	font-size: 18px;
-}
-
-.learn h5 {
-	margin-bottom: 0;
-	font-size: 14px;
-}
-
-.learn ul {
-	padding: 0;
-	margin: 0 0 30px 25px;
-}
-
-.learn li {
-	line-height: 20px;
-}
-
-.learn p {
-	font-size: 15px;
-	font-weight: 300;
-	line-height: 1.3;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.quote {
-	border: none;
-	margin: 20px 0 60px 0;
-}
-
-.quote p {
-	font-style: italic;
-}
-
-.quote p:before {
-	content: '“';
-	font-size: 50px;
-	opacity: .15;
-	position: absolute;
-	top: -20px;
-	left: 3px;
-}
-
-.quote p:after {
-	content: '”';
-	font-size: 50px;
-	opacity: .15;
-	position: absolute;
-	bottom: -42px;
-	right: 3px;
-}
-
-.quote footer {
-	position: absolute;
-	bottom: -40px;
-	right: 0;
-}
-
-.quote footer img {
-	border-radius: 3px;
-}
-
-.quote footer a {
-	margin-left: 5px;
-	vertical-align: middle;
-}
-
-.speech-bubble {
-	position: relative;
-	padding: 10px;
-	background: rgba(0, 0, 0, .04);
-	border-radius: 5px;
-}
-
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	top: 100%;
-	right: 30px;
-	border: 13px solid transparent;
-	border-top-color: rgba(0, 0, 0, .04);
-}
-
-/**body*/.learn-bar > .learn {
-	position: absolute;
-	width: 272px;
-	top: 8px;
-	left: -300px;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, .6);
-	transition-property: left;
-	transition-duration: 500ms;
-}
-
-@media (min-width: 899px) {
-	/**body*/.learn-bar {
-		width: auto;
-		margin: 0 0 0 300px;
-	}
-	/**body*/.learn-bar > .learn {
-		left: 8px;
-	}
-	/**body*/.learn-bar #todoapp {
-		width: 550px;
-		margin: 130px auto 40px auto;
-	}
 }
