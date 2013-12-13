@@ -5,31 +5,34 @@
   window.todo = new Todo();
 
   // HTML template for a single todo item
-  var template = $("#templates .todo-item").html()
+  var todoTemplate = $("#templates .todo-item").html()
     , $root = $("#todo-list")
   ;
 
 
   /* Listen to user events */
 
-  // 1. Event handler for adding todos
+  // 2. When the form submits, add a new todo via the model
 
 
-  // 3. Event handler for removing todos
+  // 3. When the user clicks the "x" button, remove the todo via the model
   $root.on('click', '.destroy', function (e) {
     // TODO
-
   });
 
 
 
   /* Listen to model events */
 
-  // 2. Event listener for adding todos
+  // 1. When a new todo is added, generate new html to show it on the page
   todo.on('add', function (newTodo) {
-
+    console.log('New todo!', newTodo);
+    // TODO
   });
 
-  // 4. Event listener for deleting todos
+  todo.on('remove', function (todo) {
+    var idFilter = '[data-id=' + todo.id + ']';
+    $('#todo-list .todo-item').filter(idFilter).remove();
+  });
 
 })();

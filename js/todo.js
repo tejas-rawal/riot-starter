@@ -41,6 +41,7 @@
       items.splice(index, 1);
 
       this.trigger("remove", item);
+      return item;
     };
 
   };
