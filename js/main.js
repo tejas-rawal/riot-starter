@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // alert('hi');
 
 // var buzzer = {
@@ -38,20 +38,20 @@
 //   pizzaCook.spinDough();
 // }
 
-// var weather = $.observable({});
-// weather.listen = function() {
-//   this.trigger('snow-storm');
-//   this.trigger('tornado');
-// };
-// weather.on('snow-storm', function () {
-//   alert('Bring your coats');
-// });
+var weather = $.observable({});
 
-// weather.on('tornado', function () {
-//   alert('Everybahdy panic!');
-// });
+weather.on('snow-storm', function () {
+  alert('Bring your coats');
+});
 
-// weather.listen();
+weather.on('tornado', function () {
+  alert('Everybahdy panic!');
+});
+
+weather.trigger('snow-storm');
+weather.trigger('tornado');
+
+
 
 // var fireEater = {
 //   state: 'arrogant',
@@ -90,34 +90,33 @@
 //   fireEater.eatFire();
 // }
 
-var stock = $.observable({
-  price: 99,
-  update: function () {
-    // Change price by -1, 0, or 1
-    this.price += parseInt(Math.random() * 3, 10) - 1;
-    // TODO: TRIGGER CHANGE WITH PRICE
-    this.trigger('price-change', this.price);
-  }
-});
+// var stock = $.observable({
+//   price: 99,
+//   update: function () {
+//     // Change price by -1, 0, or 1
+//     this.price += parseInt(Math.random() * 3, 10) - 1;
+//     // TODO: TRIGGER CHANGE WITH PRICE
+//     this.trigger('price-change', this.price);
+//   }
+// });
 
-stock.on('price-change', function (price) {
-  if (price > 100) {
-    console.log('Too expensive:', price);
-  }
-  else if (price < 100) {
-    console.log('Too cheap:', price);
-  }
-  else {
-    console.log('Just right!', price);
-  }
-});
+// stock.on('price-change', function (price) {
+//   if (price > 100) {
+//     console.log('Too expensive:', price);
+//   }
+//   else if (price < 100) {
+//     console.log('Too cheap:', price);
+//   }
+//   else {
+//     console.log('Just right!', price);
+//   }
+// });
 
-setInterval(function () {
-  stock.update();
-}, 1000);
+// setInterval(function () {
+//   stock.update();
+// }, 1000);
 
 
-=======
 (function () {
 
   clock.on('tick', function (tickCount) {
@@ -133,4 +132,4 @@ setInterval(function () {
   });
 
 })();
->>>>>>> a512a66f5cc027ad0cf135072a41489524786509
+
