@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // alert('hi');
 
 // var buzzer = {
@@ -116,3 +117,20 @@ setInterval(function () {
 }, 1000);
 
 
+=======
+(function () {
+
+  clock.on('tick', function (tickCount) {
+    console.log('tick!', tickCount);
+  });
+
+  $('#clock-control .start').on('click', function (e) {
+    clock.start();
+  });
+
+  $('#clock-control .stop').on('click', function (e) {
+    clock.stop();
+  });
+
+})();
+>>>>>>> a512a66f5cc027ad0cf135072a41489524786509
