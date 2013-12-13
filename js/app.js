@@ -1,4 +1,3 @@
-
 /* The presenter */
 
 (function() { 'use strict';
@@ -31,7 +30,6 @@
 
   });
 
-  // 4. Event listener for deleting todos 
-
+  // 4. Event listener for deleting todos
 
 })();

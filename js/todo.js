@@ -2,13 +2,13 @@
 
   // Private variables and functions
   var counter = 0;
-  
+
   var generateId = function () {
     counter += 1;
     return 'item_' + counter;
   };
 
-  
+
   /* The model itself */
 
   window.Todo = function () {
@@ -39,21 +39,10 @@
       var index = findItemIndexById(id);
       var item = items[index];
       items.splice(index, 1);
-      
+
       this.trigger("remove", item);
     };
 
-    this.toggle = function (id) {
-      var itemIds = items.map(function (el) {
-        return el.id;
-      });
-      var itemIndex = itemIds.indexOf(id);
-      var item = items[itemIndex];
-      item.done = !item.done;
-      
-      this.trigger("toggle", item);
-    };
-
-  }
+  };
 
 })();
