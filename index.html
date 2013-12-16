@@ -6,17 +6,35 @@
 <body>
 
 <div id="video-display"></div>
-<div id="video-list"></div>
+<div id="video-list"><h3>Titles:</h3></div>
 
-<form id="new-video">
-  <!-- TODO: 2 inputs, 1 button -->
+<form id="new-video"><b>New Video:</b>
+  <label>Title:</label>
+  <input type="text" class="new-title"></input>
+  <label>YoutubeId:</label>
+  <input type="text" class="id"></input>
+  <label>Genre:</label>
+  <input type="text" class="new-genre"></input>
+  <input type="submit" class="button"></input>
 </form>
 
+<div id="genre-stats"></div>
 
 <div id="templates">
   <!-- TODO: video-list-item template -->
-  
+  <script class="item" type="text/template">
+    <h3 class="title"><a href="https://www.youtube.com/watch?v={youtubeId}">{ title } ({genre})</a><h3>
+  </script> 
 </div>
+
+<div id="templates">
+  <!-- TODO: video-list-item template -->
+  <script class="genre-item" type="text/template">
+    <p class="genre"> The {genre} genre has {genreCount} video(s)</p>
+  </script> 
+</div>
+
+
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
