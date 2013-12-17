@@ -8,9 +8,10 @@ var titleTemplate = $("#templates .item").html();
 var statsTemplate = $("#templates .genre-item").html();
 console.log(titleTemplate);
 
-var stats = {};
 var renderGenreStats = function() {
   $("#genre-stats").empty();
+
+  var stats = {};
 
   for(var i = 0; i < videos.length; i++) {
     var video = videos[i];
@@ -18,15 +19,13 @@ var renderGenreStats = function() {
         stats[video.genre] = 0;
       }
     stats[video.genre] += 1;
-    var genreCount = stats[video.genre];
-    var genreHtml = $.render(statsTemplate, {genre: video.genre, genreCount: genreCount});
+  }
+
+  for(var genre in stats) {
+    var genreCount = stats[genre];
+    var genreHtml = $.render(statsTemplate, {genre: genre, genreCount: genreCount});
     $("#genre-stats").append(genreHtml);
   }
-  // for(var genre in stats) {
-  //   var genreCount = stats[genre];
-  //   var genreHtml = $.render(statsTemplate, {genre: genre, genreCount: genreCount});
-  //   $("#genre-stats").append(genreHtml);
-  // }
 };
 
 var renderVideoList = function () {
@@ -44,12 +43,13 @@ $('#new-video').on('submit', function(e) {
   var title = $(".new-title").val();
   var youtubeId = $(".id").val();
   var new_genre = $(".new-genre").val();
-  $(".new-title").val("");
-  $(".id").val("");
-  videos.push({title: 'title', youtubeId: 'youtubeId', genre: 'new_genre'});
+  videos.push({title: title, youtubeId: youtubeId, genre: new_genre});
   var newvideoHtml = $.render(titleTemplate, { title: title, youtubeId: youtubeId, genre: new_genre });
   $("#video-list").append(newvideoHtml);
   renderGenreStats();
+  $(".new-title").val("");
+  $(".id").val("");
 });
-// renderGenreStats();
+
+renderGenreStats();
 renderVideoList();
