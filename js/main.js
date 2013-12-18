@@ -6,7 +6,7 @@ var videos = [
 
 var titleTemplate = $("#templates .item").html();
 var statsTemplate = $("#templates .genre-item").html();
-console.log(titleTemplate);
+var embedTemplate = $("#templates .video-embed").html();
 
 var renderGenreStats = function() {
   $("#genre-stats").empty();
@@ -34,7 +34,7 @@ var renderVideoList = function () {
     var video = videos[i];
     var videoHtml = $.render(titleTemplate, video);
     $("#video-list").append(videoHtml);
-    console.log(video.title);
+    // console.log(video.title);
   }
 };
 
@@ -53,3 +53,11 @@ $('#new-video').on('submit', function(e) {
 
 renderGenreStats();
 renderVideoList();
+
+$(".title .id_link").on( "click", function(e) {
+  e.preventDefault();
+  var youtubeId = $(e.currentTarget).data('youtube-id');
+  console.log('Clicked on youtube video:', youtubeId);
+  var newEmbedHtml = $.render(embedTemplate, { youtubeId: youtubeId });
+  $("#video-display").append(newEmbedHtml);
+});

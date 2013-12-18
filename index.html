@@ -23,18 +23,17 @@
 <div id="templates">
   <!-- TODO: video-list-item template -->
   <script class="item" type="text/template">
-    <h3 class="title"><a href="https://www.youtube.com/watch?v={youtubeId}">{ title } ({genre})</a><h3>
+    <h3 class="title"><a class="id_link" data-youtube-id="{youtubeId}" href="https://www.youtube.com/watch?v={youtubeId}">{ title } ({genre})</a><h3>
   </script> 
-</div>
 
-<div id="templates">
-  <!-- TODO: video-list-item template -->
   <script class="genre-item" type="text/template">
     <p class="genre"> The {genre} genre has {genreCount} video(s)</p>
   </script> 
+
+  <script type="text/template" class="video-embed">
+    <iframe width="560" height="315" src="//www.youtube.com/embed/{youtubeId}" frameborder="0" allowfullscreen></iframe>
+  </script>
 </div>
-
-
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
