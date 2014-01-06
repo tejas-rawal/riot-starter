@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {box-sizing: border-box;}
 body {
   font-family: sans-serif;
@@ -94,4 +95,19 @@ input[type="button"], input[type="submit"] {
 
 .edit-item-section {
   margin: 5px 0 0 0;
+=======
+
+body {
+  font-size: 18px;
+}
+
+.photo img {
+  max-height: 300px;
+}
+
+.comment {
+  background: #eee;
+  border: #ccc;
+  padding: 8px;
+>>>>>>> 4bc3a81591f85dbb775ce88aee8a856cf45c644f
 }
